@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제창</title>
+</head>
+
+<body>
+    <h1>결제창</h1>
+    <div id="result"></div>
+    <input type="text" id="creditCard"><br>
+    <button id="payButton">결제</button>
+
+    <script>
+        // URL에서 총액 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const totalAmount = urlParams.get('totalAmount');
+
+        // 총액을 결과 div에 추가
+        document.getElementById('result').innerHTML = `${totalAmount} 원을 결제하겠습니다. <br> 신용카드 번호를 입력하고 결제 버튼을 눌러 주세요`;
+
+        document.getElementById('payButton').addEventListener('click', () => {
+            // 신용카드 번호 가져오기
+            const creditCardNode = document.getElementById('creditCard').value;
+
+            if (creditCardNode === "") {
+                alert("신용카드의 번호를 입력해주세요");
+            } else {
+                alert(`${creditCardNode}로 ${totalAmount}원이 결제 완료 되었습니다.`);
+                window.close()
+            }
+        });
+    </script>
+</body>
+
+</html>

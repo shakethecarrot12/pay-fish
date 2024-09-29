@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>참치회 특가 판매</h1>
+    <form id="form">
+        <select onchange="selectProduct(this)" id="product" size="4" multiple>
+            <option value="3000">대뱃살 - 3000</option>
+            <option value="5000">목살 - 5000</option>
+            <option value="4000">배꼽살 - 4000</option>
+            <option value="1000">중뱃살 - 1000</option>
+        </select>
+        <div id='result'></div>
+        <button onclick="pay()">결제하기</button>
+    </form>
+    <script src="main.js"></script>
+</body>
+
+</html>
